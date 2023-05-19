@@ -177,7 +177,6 @@ const next_text_validation = (data, regex, str, type, fixed) => {
 
     }
 }
-
 const handleLoanTable = (data) => {
     let { e, index, length, counter, loanObject, pageObject, loanTable, typeArray } = data
     try {
@@ -224,10 +223,8 @@ const createContractTable = (filtered, pageObject) => {
         if(["*Contratos que comprometem a margem consignável."].includes(string)){length = index + 1}
         const tableData = {e, index, length, counter, loanObject, pageObject, loanTable: loanKeys, typeArray: type}
         if(type === "EMPRESTIMOS" && active) {
-            // console.log(e.str, index, length, counter)
             counter = handleLoanTable(tableData)
         } else if(type && active){
-            // console.log(e.str, index, length, counter)
             tableData.loanTable = cardKeys
             counter = handleLoanTable(tableData)
         } 
@@ -243,5 +240,4 @@ const handlePage = (objects, page, pageObject) => {
         createContractTable(joinedStrings.filter((e) => e.str), pageObject)
     }
 }
-
 export { handlePage }

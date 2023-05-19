@@ -3,7 +3,6 @@ import { readPDF } from "./src/readPDF.js";
 import fs from 'fs/promises'
 import { handlePage } from "./src/pagesHandler.js";
 const dir = "./docs/pdfs"
-
 const handleDocuments = (document, index) => {
     const pageObject = {EMPRESTIMOS: [], CARTAO_RMC: [], CARTAO_RCC: []}
     document?.map((e, i) => handlePage(e, i, pageObject))
